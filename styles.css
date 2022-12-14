@@ -53,6 +53,27 @@ body{
     padding: 10px 15px;
 }
 
+.sidebar li{
+    list-style: none;
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon{
+    font-size: 20px;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li .icon,
+.sidebar li .text{
+    color: var(--text-color);
+}
+
 .sidebar header{
     position: relative;
 }
@@ -94,4 +115,11 @@ body{
     border-radius: 50%;
     color: var(--sidebar-color);
     font-size: 22px;
+}
+
+.sidebar li a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
