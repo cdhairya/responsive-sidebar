@@ -72,6 +72,7 @@ body{
 .sidebar li .icon,
 .sidebar li .text{
     color: var(--text-color);
+    transition: var(--tran-02);
 }
 
 .sidebar header{
@@ -117,9 +118,34 @@ body{
     font-size: 22px;
 }
 
+.sidebar .search-box{
+    background-color: var(--primary-light-color);
+}
+
+.search-box input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: var(--primary-light-color);
+    border-radius: 6px;
+}
+
 .sidebar li a{
     text-decoration: none;
     display: flex;
     align-items: center;
     height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    transition: var(--tran-04);
+}
+
+.sidebar li a:hover{
+    background-color: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text{
+    color: var(--sidebar-color);
 }
