@@ -166,6 +166,9 @@ body.dark .sidebar header .toggle {
     width: 100%;
     border: none;
     outline: none;
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 500;
     background-color: var(--primary-light-color);
     border-radius: 6px;
 }
@@ -216,9 +219,18 @@ body.dark .sidebar li a:hover .text {
 
 .menu-bar .mode i {
     position: absolute;
+    transition: var(--tran-03);
 }
 
 .menu-bar .mode i.sun {
+    opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun {
+    opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
     opacity: 0;
 }
 
