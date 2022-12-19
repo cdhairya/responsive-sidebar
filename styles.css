@@ -28,6 +28,16 @@
 body {
     height: 100vh;
     background-color: var(--body-color);
+    transition: var(--tran-04);
+}
+
+body.dark {
+    --body-color: #18191A;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-light-color: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
 }
 
 /* REUSABLE CSS */
@@ -35,6 +45,13 @@ body {
     font-size: 16px;
     font-weight: 500;
     color: var(--text-color);
+    transition: var(--tran-04);
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar.close .text {
+    opacity: 0;
 }
 
 .sidebar .image {
@@ -52,6 +69,11 @@ body {
     width: 275px;
     background-color: var(--sidebar-color);
     padding: 10px 15px;
+    transition: var(--tran-05);
+}
+
+.sidebar.close {
+    width: 88px;
 }
 
 .sidebar li {
@@ -107,7 +129,7 @@ body {
     position: absolute;
     right: -27px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(180deg);
     background-color: var(--primary-color);
     height: 25px;
     width: 25px;
@@ -117,10 +139,26 @@ body {
     border-radius: 50%;
     color: var(--sidebar-color);
     font-size: 22px;
+    transition: var(--tran-03);
+}
+
+.sidebar.close header .toggle {
+    transform: translateY(-50%);
+}
+
+body.dark .sidebar.close header .toggle {
+    color: var(--text-color);
+    transform: translateY(-50%);
+}
+
+body.dark .sidebar header .toggle {
+    color: var(--text-color);
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .sidebar .search-box {
     background-color: var(--primary-light-color);
+    border-radius: 6px;
 }
 
 .search-box input {
@@ -151,6 +189,11 @@ body {
     color: var(--sidebar-color);
 }
 
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+    color: var(--text-color);
+}
+
 .sidebar .menu-bar {
     height: calc(100% - 7%);
     display: flex;
@@ -160,6 +203,8 @@ body {
 
 .menu-bar .mode {
     background-color: var(--primary-light-color);
+    position: relative;
+    border-radius: 6px;
 }
 
 .menu-bar .mode .moon-sun {
@@ -178,12 +223,16 @@ body {
 }
 
 .menu-bar .mode .toggle-switch {
+    right: 4px;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 50px;
     height: 100%;
     cursor: pointer;
+    background-color: var(--primary-light-color);
+    border-radius: 6px;
 }
 
 .toggle-switch .switch {
@@ -204,4 +253,9 @@ body {
     top: 18%;
     left: 5px;
     /* transform: translateY(-50%); */
+    transition: var(--tran-03);
+}
+
+body.dark .switch::before {
+    left: 24px;
 }
